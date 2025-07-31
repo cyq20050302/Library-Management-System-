@@ -158,36 +158,3 @@ app.get('/stats', (req, res) => {
 app.listen(3000, () => {
   console.log('Node服务已启动：http://localhost:3000');
 });
-
-/*
-MySQL建表语句：
-
-CREATE DATABASE IF NOT EXISTS library DEFAULT CHARSET utf8mb4;
-USE library;
-
-CREATE TABLE users (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  username VARCHAR(50) NOT NULL UNIQUE,
-  password VARCHAR(100) NOT NULL,
-  role VARCHAR(20) DEFAULT 'user'
-);
-
-CREATE TABLE books (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(255) NOT NULL,
-  author VARCHAR(255),
-  publish_date DATE,
-  status VARCHAR(20) DEFAULT '在馆'
-);
-
-CREATE TABLE borrow (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  book_id INT,
-  user_id INT,
-  borrow_date DATETIME,
-  return_date DATETIME,
-  status VARCHAR(20),
-  FOREIGN KEY (book_id) REFERENCES books(id),
-  FOREIGN KEY (user_id) REFERENCES users(id)
-);
-*/ 
